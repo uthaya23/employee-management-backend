@@ -56,7 +56,7 @@ router.put('/:id', verifyAdmin, async (req, res) => {
     const updatedData = req.body; // Data to update
   
     try {
-      const updatedEmployee = await Employee.findOneAndUpdate({ Employee_id: employeeIdId }, updatedData, { new: true });
+      const updatedEmployee = await Employee.findOneAndUpdate({ Employee_id: employeeId }, updatedData, { new: true });
       
       if (!updatedEmployee) {
         return res.status(404).json({ message: 'Employee not found' });
